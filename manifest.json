@@ -29,9 +29,7 @@
     "declarativeNetRequestWithHostAccess",
     "sidePanel"
   ],
-  "optional_permissions": [
-    "background"
-  ],
+  "optional_permissions": ["background"],
   "background": {
     "service_worker": "background.js"
   },
@@ -56,28 +54,15 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://*/*",
-        "http://*/*",
-        "file://*/*"
-      ],
-      "js": [
-        "shared.js",
-        "content-script.js"
-      ],
-      "css": [
-        "content-script.css"
-      ]
+      "matches": ["https://*/*", "http://*/*", "file://*/*"],
+      "js": ["shared.js", "content-script.js"],
+      "css": ["content-script.css"]
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": [
-        "logo.png"
-      ],
-      "matches": [
-        "<all_urls>"
-      ]
+      "resources": ["logo.png"],
+      "matches": ["<all_urls>"]
     }
   ],
   "commands": {

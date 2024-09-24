@@ -27,9 +27,7 @@
     "<all_urls>"
   ],
   "background": {
-    "scripts": [
-      "background.js"
-    ],
+    "scripts": ["background.js"],
     "persistent": true
   },
   "browser_action": {
@@ -41,23 +39,12 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://*/*",
-        "http://*/*",
-        "file://*/*"
-      ],
-      "js": [
-        "shared.js",
-        "content-script.js"
-      ],
-      "css": [
-        "content-script.css"
-      ]
+      "matches": ["https://*/*", "http://*/*", "file://*/*"],
+      "js": ["shared.js", "content-script.js"],
+      "css": ["content-script.css"]
     }
   ],
-  "web_accessible_resources": [
-    "logo.png"
-  ],
+  "web_accessible_resources": ["logo.png"],
   "commands": {
     "newChat": {
       "suggested_key": {
