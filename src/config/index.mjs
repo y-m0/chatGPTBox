@@ -14,6 +14,43 @@ export const TriggerMode = {
   manually: 'Manually',
 }
 
+// src/config/index.mjs
+import dotenv from 'dotenv'
+
+// Load environment variables from .env file
+dotenv.config()
+
+const config = {
+  apiKey: process.env.API_KEY || 'default-api-key',
+  model: 'gpt-4', // Specify ChatGPT-4 model
+
+  // Add your custom GPT model configuration
+  customModel: {
+    name: 'your-custom-gpt-model',
+    endpoint: process.env.CUSTOM_MODEL_URL,
+    apiKey: process.env.CUSTOM_MODEL_API_KEY,
+    genId: process.env.CUSTOM_MODEL_GEN_ID,
+    prompt: process.env.CUSTOM_MODEL_PROMPT,
+  },
+
+  // New properties from the image
+  gptApiModelKeys: {
+    value: gptApiModelKeys,
+    desc: 'GPT Completion (API)',
+  },
+  githubThirdPartyApiModelKeys: {
+    value: githubThirdPartyApiModelKeys,
+    desc: 'Github Third Party Waylaidwanderer (API)',
+  },
+  customApiModelKeys: {
+    value: customApiModelKeys,
+    desc: 'Custom Model',
+  },
+
+  // Other existing configurations
+}
+
+export default config
 export const ThemeMode = {
   light: 'Light',
   dark: 'Dark',
